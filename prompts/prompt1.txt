@@ -1,0 +1,7 @@
+<<global_instructions:prompt1.txt>>
+
+<<core_instructions:prompt1.txt>>
+
+<<core_instructions:prompt2.txt>>
+
+<<core_instructions:special_cases:prompt2.txt>>
