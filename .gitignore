@@ -1,1 +1,33 @@
+# Node modules
 node_modules/
+
+# Extension build output
+dist/
+build/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment files
+.env
+
+# Temporary files
+*.tmp
+*.swp
+
+# Coverage reports
+coverage/
+
+# Dependency directories
+bower_components/
+
+# Compiled files
+*.js.map
+*.tsbuildinfo
