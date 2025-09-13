@@ -1,4 +1,0 @@
-<<special_cases:prompt1.txt>>
-
-
-This is a core instruction2
