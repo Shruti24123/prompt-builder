@@ -1,11 +1,11 @@
 {
-  "name": "vscode-tag-highlighter",
-  "displayName": "Tag Highlighter",
-  "description": "Highlights tags like <<path:to:file.txt>> only if the file exists.",
-  "version": "0.0.2",
-  "publisher": "your-name",
+  "name": "prompt-builder",
+  "displayName": "Prompt Builder",
+  "description": "Highlights existing file references inside txt files using <<folder:file.txt>> syntax and provides an Expand/Collapse action to view referenced file content without modifying the original file.",
+  "version": "1.2.0",
+  "publisher": "sarveshsinghchauhan",
   "engines": {
-    "vscode": "^1.89.0"
+    "vscode": "^1.93.0"
   },
   "categories": [
     "Other"
@@ -15,67 +15,35 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "configuration": {
-        "title": "Tag Highlighter",
-        "properties": {
-        "tagHighlighter.pattern": {
-            "type": "string",
-            "default": "<<[A-Za-z0-9._\\-/:\\\\]+?>>",
-            "description": "Regex (global) for path-like tags."
-        },
-        "tagHighlighter.pathSeparator": {
-            "type": "string",
-            "default": ":",
-            "description": "Separator inside tags (e.g. ':' in <<a:b:c.txt>>)."
-        },
-        "tagHighlighter.onlyHighlightExistingPaths": {
-            "type": "boolean",
-            "default": true,
-            "description": "Highlight/preview only when the referenced path exists."
-        },
-        "tagHighlighter.showInline": {
-            "type": "boolean",
-            "default": true,
-            "description": "Render an inline, single-line preview after the tag (the tag itself is visually hidden)."
-        },
-        "tagHighlighter.showHover": {
-            "type": "boolean",
-            "default": true,
-            "description": "Show the full file content in a hover."
-        },
-        "tagHighlighter.maxBytes": {
-            "type": "number",
-            "default": 8192,
-            "description": "Maximum bytes to read from referenced file (protects performance)."
-        },
-        "tagHighlighter.newlineJoiner": {
-            "type": "string",
-            "default": " ↩ ",
-            "description": "Replacement for newlines in inline preview."
-        },
-        "tagHighlighter.inlineColor": {
-            "type": "string",
-            "default": "#888888",
-            "description": "CSS color for inline preview text."
-        }
-        }
-    },
     "commands": [
-        {
-        "command": "tagHighlighter.openSubstitutedPreview",
-        "title": "Tag Highlighter: Open substituted preview"
-        }
+      {
+        "command": "prompt-builder.toggleExpand",
+        "title": "Expand/Collapse file reference"
+      }
+    ],
+    "languages": [
+      {
+        "id": "plaintext",
+        "extensions": [
+          ".txt"
+        ]
+      }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -p ./",
-    "watch": "tsc -w -p ./"
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/node": "^24.3.3",
-    "@types/vscode": "^1.89.0",
-    "typescript": "^5.4.0",
+    "@types/node": "^20.19.14",
+    "@types/vscode": "^1.93.0",
+    "typescript": "^5.6.3",
     "vsce": "^2.15.0"
-  }
+  },
+  "author": {
+    "name": "Sarvesh Singh Chauhan",
+    "email": "sarvesh.s.chauhan.00@gmail.com"
+  },
+  "license": "MIT"
 }
